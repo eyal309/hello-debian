@@ -10,8 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'cd build'
-                    sh 'dpkg-buildpackage -us -uc'
+                    sh 'cd build && dpkg-buildpackage -us -uc'
                     sh 'cp ../hello-*.* .'
                 }
             }
