@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            filename 'Dockerfile'
+            filename 'build/Dockerfile'
             reuseNode true
         }
     }
@@ -22,9 +22,9 @@ pipeline {
         }
     }
 
-    // post {
-    //     always {
-    //         cleanWs()
-    //         }
-    //     }
+    post {
+        always {
+            cleanWs()
+            }
+        }
 }
