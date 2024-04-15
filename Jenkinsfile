@@ -11,7 +11,6 @@ pipeline {
             steps {
                 script {
                     sh 'cd build && dpkg-buildpackage -us -uc'
-                    sh 'cp ../hello-*.* .'
                 }
             }
         }
