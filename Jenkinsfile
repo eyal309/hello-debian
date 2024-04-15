@@ -10,7 +10,6 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'cd /home/jenkins/build'
                     sh 'dpkg-buildpackage -us -uc'
                     sh 'cp ../hello-*.* .'
                 }
