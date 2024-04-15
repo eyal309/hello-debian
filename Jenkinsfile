@@ -2,7 +2,6 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
-            args '-w /home/jenkins/build/'
             reuseNode true
         }
     }
@@ -11,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    sh 'cd /home/jenkins/build'
                     sh 'dpkg-buildpackage -us -uc'
                     sh 'cp ../hello-*.* .'
                 }
