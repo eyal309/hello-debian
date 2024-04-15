@@ -2,6 +2,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
+            args '-w /home/jenkins/build/'
             reuseNode true
         }
     }
