@@ -5,4 +5,7 @@ RUN useradd -ms /bin/bash -u 1001 jenkins
 
 USER jenkins
 
+RUN mkdir build
+WORKDIR build
+
 CMD cat
